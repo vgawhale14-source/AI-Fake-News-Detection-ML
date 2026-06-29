@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Based Fake News Detection  Using Machine Learning</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+📰 AI Fake News Detector(ML)
+
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#detect">Detect</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+AI Based Fake News Detection Using Machine Learning
+
+</h1>
+
+<p>
+
+Detect whether any news article is Real or Fake using
+Artificial Intelligence and Machine Learning.
+
+</p>
+
+<a href="#detect">
+
+<button>
+
+Start Detecting
+
+</button>
+
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<img src="{{ url_for('static', filename='fake_news.png') }}">
+
+</div>
+
+</section>
+<section class="about" id="about">
+
+<div class="card">
+
+<h2>About Model</h2>
+
+<ul>
+
+<li><b>🤖 Algorithm :</b> Logistic Regression</li>
+
+<li><b>🔤 Vectorizer :</b> TF-IDF</li>
+
+<li><b>📈 Dataset :</b> Fake.csv & True.csv</li>
+
+<li><b>📊 Training Accuracy :</b> 98.59%</li>
+
+<li><b>⚡ Prediction :< 1 sec</li>
+
+<li><b>🧠 Framework :</b> Flask</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="detect" id="detect">
+
+<div class="detect-card">
+
+<h2>
+
+Check News Article
+
+</h2>
+
+<form action="/predict" method="POST">
+
+<textarea
+name="news"
+placeholder="Paste your complete news article here..."
+required>{{ news if news else "" }}</textarea>
+
+<br>
+
+<button type="submit">
+
+🔍 Predict News
+
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h2>{{ prediction }}</h2>
+
+<h3>Confidence : {{ confidence }}%</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="card">
+
+<h2>Disclaimer</h2>
+
+<p>
+
+This project uses a Machine Learning model trained on the
+Fake.csv and True.csv datasets.
+
+The prediction is based on learned patterns and may not always
+be accurate for newly published or unseen news articles.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>
+
+Developed By
+
+</h3>
+
+<p>
+
+Vaishnavi Gawhale
+
+</p>
+
+<p>
+
+Computer Science Engineering
+
+</p>
+
+</footer>
+{% if prediction %}
+<script>
+window.onload = function () {
+    document.getElementById("detect").scrollIntoView({
+        behavior: "smooth"
+    });
+};
+</script>
+{% endif %}
+
+</body>
+
+</html>
