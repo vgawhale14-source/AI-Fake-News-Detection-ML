@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-Flask==3.0.0 
-gunicorn==21.2.0 
-numpy==1.26.4 
-pandas==2.2.2 
-=======
-Flask==3.0.0 
-gunicorn==21.2.0 
-numpy==1.26.4 
-pandas==2.2.2 
->>>>>>> 494052662994e3bde10504cc0cd1450cd8ec827d
+Flask==3.0.0
+gunicorn==21.2.0
+numpy==1.26.4
+pandas==2.2.2
 scikit-learn==1.4.2
